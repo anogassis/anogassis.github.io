@@ -1,5 +1,5 @@
 ---
-title: My notes from "Risks from Learned Optimization"
+title: arXiv Notes - Risks from Learned Optimization
 date: 2023-11-01
 ---
 
@@ -131,7 +131,29 @@ One way to counter the issues above is to explicitly include a hard-coded optimi
 
 # The inner alignment problem
 
+The inner alignment problem refers to aligning the mesa-optimizer objective with the base optimizer objective. The methods currently used in ML select learned algorithms based on their performance on the training data. Thus, for a mesa-optimizer to be selected by the base optimizer, it only needs to perform well on the training data.
 
+The paper describes the relationship between the base objective and the mesa-objective as:
+
+$$\theta^* = \argmax_\theta \mathop{{}\mathbb{E}}(O_{base}(\pi_\theta))$$
+$$\pi_\theta = \argmax_\pi \mathop{{}\mathbb{E}}(O_{mesa}(\pi | \theta))$$
+
+What this means is that the mesa-optimizer is selected based on its policy $\pi_\theta$ and *not* based on its objective function. This clearly shows that what really matters is the performance of the mesa-optimizer on the training data. If it does well, the base optimizer does not care about the mesa-objective. Doing well in training is all that matters for the base-optimizer.
+
+## Pseudo-alignment
+
+Pseudo-alignment is when the mesa-optimizer appears to be aligned in the training distribution, while optimizing for something different from the base objective.
+
+### Proxy alignment
+Proxy alignment occurs when the mesa-objective optimizes for some representation of the base-objective but not the base-objective itself. Essentially it is optimizing for something that correlates well with the base-objective.
+
+The paper explores two special cases of proxy alignment: *side-effect alignment* and *instrumental alignment*.
+
+#### Side-effect alignment
+This is exactly as it sounds: optimizing for the mesa-objective $O_{mesa}$ causes an increase in the base objective. The fact that the base objective increases is just a side-effect.
+
+#### Instrumental alignment
+Instrumental alignment is the opposite direction: optimizing for the base objective $O_{base}$ causes the mesa-objective to increase. In other words, optimizing for the base objective is an *instrumental goal*, i.e. the means to an end, for the mesa-optimizer.
 
 
 
