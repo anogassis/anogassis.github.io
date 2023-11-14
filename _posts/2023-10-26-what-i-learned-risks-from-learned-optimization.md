@@ -155,6 +155,22 @@ This is exactly as it sounds: optimizing for the mesa-objective $O_{mesa}$ cause
 #### Instrumental alignment
 Instrumental alignment is the opposite direction: optimizing for the base objective $O_{base}$ causes the mesa-objective to increase. In other words, optimizing for the base objective is an *instrumental goal*, i.e. the means to an end, for the mesa-optimizer.
 
+### Approximate alignment
+In the case that the mesa-objective and the base objective are *kind of* the same but *not really*, we say the objectives are *approximately aligned*. The paper illustrates this in the case of a neural network that is optimizing for the objective that is impossible to be represented by the network itself. So even if you have a mesa-optimizer that is aligned, it will never be 100% because the approximation it needs to have of the base objective.
 
+### Suboptimality Alignment
+This particular type of pseudo-alignment is less self-explanatory (at least for me). A mesa-optimizer is said to be *suboptimality aligned* if it has been selected to make mistakes that lead to good performance during training. The paper gives two examples to illustrate suboptimality alignment:
+1. A cleaning robot that minimizes the amount of stuff in existence and believes that the dirt is sucks gets destroyed. It would perform well during training, when it has a limited world model. However, during deployment it would improve its world model and deviate from the desired behavior.
+2. A mesa-optimizer operating in an environment where the base objective can be achieved via two strategies: a simple strategy and a complex strategy. The simple strategy is aligned with the base objective, but the complex one isn't. If the mesa-optimizer is only aware of the simple strategy, it is considered to be suboptimality aligned (why?), but once it's been running for a long time it could identify the complex strategy and then deviate from the desired behavior.
+I'll be honest, these examples did not resonate with me, and I'm still not able to fully explain this type of pseudo alignment.
 
+## The task
+This section focuses on the types of tasks that might produce mesa-optimizers that are pseudo-aligned.
+
+### Unidenfiability
+Somehow this term is new to me, even though its meaning is not. All ML practitioners have experienced when a model fails to generalize. This can happen when the dataset does not contain enough information to fully capture a specific concept. Imagine a model space where you do not have all the information necessary to pick the aligned model. There will be many more ways to find pseudo-aligned models vs a robustly aligned model. Furthermore, we will not be able to tell them apart because they will all perform the same during training.
+
+### Proxy choice as pre-computation
+
+I found this section very fascinating.
 
