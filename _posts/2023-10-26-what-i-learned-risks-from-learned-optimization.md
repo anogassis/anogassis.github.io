@@ -1,6 +1,7 @@
 ---
 title: arXiv Notes - Risks from Learned Optimization
-date: 2023-11-01
+date started: 2023-11-01
+date finished: 
 ---
 
 # Why I read the paper
@@ -172,5 +173,14 @@ Somehow this term is new to me, even though its meaning is not. All ML practitio
 
 ### Proxy choice as pre-computation
 
-I found this section very fascinating.
+I found this section very fascinating. Essentially we can see proxy alignment as a type of pre-computation done by the base-optimizer. The result is that it pre-selects (or computes) the best proxies for the base objective and then the mesa-optimizer can maximize those proxies.
+
+This pre-computation is only beneficial when there is a causal relationship between a proxy and the base objective. Without this causal relationship there is no guarantee that optimizing for the proxy variable will yield good performance on the base objective. This does not mean that the causal relationship needs to be perfect, even imperfect proxies can result in great performance boosts.
+
+Finally, there are two important points that come from this analysis:
+1. There will be pressure towards proxy alignment. This pressure is greater the more complex the environment is. Our universe is hugely complex, and there are many proxies that have a causal relationship to a desired goal.
+2. A time complexity penalty is tricky! The authors argued previously that a time complexity penalty would decrease the chance for mesa-optimization, but it can also promote pseudo-alignment.
+
+### Compression of the mesa-optimizer
+
 
