@@ -50,5 +50,5 @@ categories: [AGI Safety Fundamentals]
 ## Readings
 
 - [X] [[1hr Talk] Intro to Large Language Models](https://www.youtube.com/watch?v=zjkBMFhNj_g)
-- [X] [Compute Trends Across Three Eras of Machine Learning]([link-to-reading-2](https://epochai.org/blog/compute-trends))
-- [X] [Nvidia: The chipmaker that became an AI superpower](https://www.bbc.com/news/business-65675027)``
+- [X] [Compute Trends Across Three Eras of Machine Learning](https://epochai.org/blog/compute-trends)
+- [X] [Nvidia: The chipmaker that became an AI superpower](https://www.bbc.com/news/business-65675027)
