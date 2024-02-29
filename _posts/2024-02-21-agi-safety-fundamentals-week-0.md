@@ -46,18 +46,9 @@ categories: [AGI Safety Fundamentals]
     - New large scale models that are 100 to 1000x larger than the previous era.
     - Starts in 2015.
     - Doubling time of 10 months.
-  - 
 
 ## Readings
 
 - [X] [[1hr Talk] Intro to Large Language Models](https://www.youtube.com/watch?v=zjkBMFhNj_g)
 - [X] [Compute Trends Across Three Eras of Machine Learning]([link-to-reading-2](https://epochai.org/blog/compute-trends))
 - [X] [Nvidia: The chipmaker that became an AI superpower](https://www.bbc.com/news/business-65675027)
-
-## Exercises
-
-- [ ] Exercise 1: Description of Exercise 1
-- [ ] Exercise 2: Description of Exercise 2
-- [ ] Exercise 3: Description of Exercise 3
-
-## Additional Notes
