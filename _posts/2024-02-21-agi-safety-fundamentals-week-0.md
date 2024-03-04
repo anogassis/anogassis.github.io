@@ -1,6 +1,6 @@
 ---
 layout: post
-title: AGI Safety Fundamentals - Week 0
+title: AI Safety Fundamentals - Alignment Course - Week 0
 date: 2024-02-21
 categories: [AGI Safety Fundamentals]
 ---
