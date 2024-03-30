@@ -1,3 +1,5 @@
 theme: minima
 title: anogassis' blog
 description: my notes on topics I'm interested in
+minima:
+  skin: dark
