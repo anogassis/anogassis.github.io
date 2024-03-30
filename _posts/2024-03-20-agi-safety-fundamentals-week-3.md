@@ -62,7 +62,7 @@ $$r = r_{\theta} - \lambda r_{KL}$$
 
 **Motivation:** (1) scale supervision by using AI to supervise other AI systems. (2) reduce the tension between harmless and helpful behaviors. (3) have more transparent principles to control the behavior of AI systems. (4) make iteration faster and more efficient by eliminating the need to collect human labels.
 
-![Figure 1](../figures/2023-03-20-figure-1.png)
+![Figure 1](../docs/assets/images/2024-03-20-figure-1.png)
 Reproduced from [Constitutional AI: Harmlessness from AI Feedback](https://arxiv.org/pdf/2212.08073.pdf)
 
 ### Constitutional AI: Critiques, Revisions, and Supervised Learning
@@ -97,13 +97,52 @@ Labeled dataset is *hybrid*, i.e. it contains AI and human generated labels:
 
 ### Results
 
-![Figure 2](../figures/2024-03-20-figure-2.png)
+![Figure 2](../docs/assets/images/2024-03-20-figure-2.png)
 
-![Figure 3](../figures/2024-03-20-figure-3.png)
+![Figure 3](../docs/assets/images/2024-03-20-figure-3.png)
 
 ## Readings
 
 - [X] [Illustrating Reinforcement Learning from Human Feedback (RLHF)](https://huggingface.co/blog/rlhf)
 - [X] [Constitutional AI: Harmlessness from AI Feedback](https://arxiv.org/pdf/2212.08073.pdf)
 
-# Week 3 - Exercises
+## Week 3 - Exercises
+
+### Explaining RLHF in your own words
+
+#### Instructions
+
+Starting from a base LLM, explain how to train it using RLHF to be a helpful assistant that answers following all the rules in Wikipedia’s Manual of Style.
+
+Write about 400-800 words. Your answer should cover:
+
+- Using supervised fine-tuning with augmented data or human demonstrations
+- Collecting feedback from humans (assume you have access to 100 expert Wikipedia editors who know all the rules)
+- Using this feedback to influence the model outputs
+
+#### RLHF in my own words
+
+**Step 0 - pre-trained, base LLM**
+
+Let's assume we have a base LLM, pre-trained on next-word prediction. We now need to instruct it to output helful answers following the [Wikipedia’s Manual of Style](https://en.wikipedia.org/wiki/Wikipedia:Manual_of_Style).
+
+**Step 1 - collect human feedback data**
+
+We have recruited the top 100 editors in Wikipedia to produce our fine-tunning dataset.
+
+We have also compiled a set of 5000 question-answer pairs that have been checked for helpfulness and hamrlessness.
+
+We instruct our 100 editors to take these question-answer pairs and reformat the answers according to the manual of style. Each answer is checked using the 4-eyes principle.
+
+We now have a dataset comprised of 5000 examples of good answers (those that follow the manual of style) and bad answers (those that do not follow the manual of style)
+
+**Step 2 - train reward model**
+
+We now train a reward model to give high **scalar** rewards to the generations that abide to the manual of style and low rewards to the generations that do not follow the manual.
+In our case, we chose to train an end-to-end LM with a single output neuron responsible for giving the **scalar** reward.
+
+**Step 3 - fine-tuning with RL**
+
+We now use PPO to fine-tune some of the parameters of our model. At the end of the fine-tunning with RL we get a model that follows the Wipedia's Manual of Style pretty closely but not 100%.
+
+We can further refine our model by repeating these steps again but replacing the initial model by the latest RL-finetuned model to get an new version.
