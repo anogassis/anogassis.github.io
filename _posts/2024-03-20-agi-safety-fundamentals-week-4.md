@@ -20,11 +20,15 @@ categories: [AGI Safety Fundamentals, AI Alignment]
     - **Cases of irreducible complexity**: some arguments might be strong but also complex, relying on counter-intuitive facts. In these cases the correct argument may be too complex and not rewarded correctly by the human.
 - **Weak-to-strong generalization**: use weaker systems to provide oversight to stronger, more capable systems. This involves using a smaller but aligned model to provide feedback to a stronger but unaligned model. Think of an aligned version of GPT-2 providing feedback to the pre-trained version of GPT-4. OpenAI is currently exploring this approach.
 
+## Supervising strong learners by amplifying weak experts
+
+- In Iterated Amplification we have a human $H$ with access to several copies of a model $M$ performing a complex task. The setup of $H + nM$ is denoted $Amplify^H(M)$. *Note*: the paper calls the model $X$ instead of $M$.
+- $Amplify^H(M)$ provides the training signal to the later version of M, $\{M_1, M_2, ..., M_n\}$ so that M becomes increasingly more capable. I expect the role of the human to become increasingly smaller as M becomes more capable. At the limit, can this become $Amplify^M(M)$? In other words, can the model use and coordinate other copies of itself?
 
 ## Readings
 
 - [X] [Can we scale human feedback for complex AI tasks?](https://aisafetyfundamentals.com/blog/scalable-oversight-intro/?_gl=1*1e5ifox*_ga*MTk0NzgwOTgzNC4xNjk2MTg0MDUw)
-- [X] []()
+- [X] [Supervising strong learners by amplifying weak experts](https://arxiv.org/pdf/1810.08575.pdf)
 - [X] []()
 - [X] []()
 
