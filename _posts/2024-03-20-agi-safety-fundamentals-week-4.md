@@ -25,13 +25,51 @@ categories: [AGI Safety Fundamentals, AI Alignment]
 - In Iterated Amplification we have a human $H$ with access to several copies of a model $M$ performing a complex task. The setup of $H + nM$ is denoted $Amplify^H(M)$. *Note*: the paper calls the model $X$ instead of $M$.
 - $Amplify^H(M)$ provides the training signal to the later version of M, $\{M_1, M_2, ..., M_n\}$ so that M becomes increasingly more capable. I expect the role of the human to become increasingly smaller as M becomes more capable. At the limit, can this become $Amplify^M(M)$? In other words, can the model use and coordinate other copies of itself?
 
+## AI safety via debate
+
+### Setup
+
+The debate is run as a game where the AIs take turns in a question-answering game.
+
+1. A question is shown to both AIs
+2. Each of the AIs state their answers up front.
+3. They take turns making statements to support their answer or point flaws to their opponent's statements.
+4. A judge reviews the entire debate $(question, answers, statements)$
+5. This is a zero-sum game.
+
+### Claims
+
+- **Central claim**: In a debate game it is harder to lie than to refute a lie.
+  - In other words, if one of the AIs lie, it is easier for the other AI to call you out.
+- Both AIs try to tell the truth in the most convincing way possible.
+- Training is stable.
+- The AIs will be as strong as AIs trained without any safety measures.
+
+### We can use short debates
+
+Debates don't need to be super long. Instead, debates can be short and focus on a single line of argument (the strongest and best argument). This way we don't have to explore the entire debate tree, and can simply explore one path in the tree.
+
+### The good
+
+- Agents can admit ignorance and get rewarded by doing so.
+- Agents try their hardest to tell the truth and are penalized for misleading statements.
+- It is sufficient to point out just *one* flaw in the opponent's argument, there is no need to disprove everything.
+
+### The bad
+
+- Humans may reward agents that say what they want to hear.
+- Humans might not be able to understand all debates and judge them correctly.
+- Training via debate requires additional model capacity.
+- Deception remains an issue.
+
 ## Readings
 
 - [X] [Can we scale human feedback for complex AI tasks?](https://aisafetyfundamentals.com/blog/scalable-oversight-intro/?_gl=1*1e5ifox*_ga*MTk0NzgwOTgzNC4xNjk2MTg0MDUw)
 - [X] [Supervising strong learners by amplifying weak experts](https://arxiv.org/pdf/1810.08575.pdf)
-- [X] []()
+- [X] [AI safety via debate](https://arxiv.org/pdf/1805.00899.pdf)
 - [X] []()
 
 
 ## Week 4 - Exercises
 
+Many RM that are trained in the same preference data but with different HPs. Build an ensemble of models. You use averages of the weights, not the predictions. More efficient than calling the predictions many times. It leads to robustness. Reward hacking. Performance gets better in the beginning. But it doesn't work as much in the test data. WARM is more robust to distributional shift.
