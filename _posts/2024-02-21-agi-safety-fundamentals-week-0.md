@@ -1,11 +1,11 @@
 ---
 layout: post
-title: AI Safety Fundamentals - Alignment Course - Week 0
+title: Intro to ML - AI Safety Fundamentals - Alignment Course - Week 0
 date: 2024-02-21
 categories: [AGI Safety Fundamentals]
 ---
 
-# Week 0 Lecture Notes
+# Intro to ML - Week 0 Resource Notes
 
 ## Intro to Large Language Models
 

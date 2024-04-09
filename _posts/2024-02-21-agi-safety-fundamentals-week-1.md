@@ -5,7 +5,7 @@ date: 2024-02-29
 categories: [AGI Safety Fundamentals]
 ---
 
-# Week 1 Lecture Notes
+# AI and the Years Ahead - Week 1 Resource Notes
 
 ## Artificial intelligence is transforming our world
 
