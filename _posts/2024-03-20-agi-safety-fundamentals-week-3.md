@@ -1,11 +1,11 @@
 ---
 layout: post
-title: AI Safety Fundamentals - Alignment Course - Week 3
+title: RLHF - AI Safety Fundamentals - Alignment Course - Week 3
 date: 2024-03-20
 categories: [AGI Safety Fundamentals]
 ---
 
-# Week 3 Resource Notes
+# RLHF (or RLAIF) - Week 3 Resource Notes
 
 ## Illustrating Reinforcement Learning from Human Feedback (RLHF)
 

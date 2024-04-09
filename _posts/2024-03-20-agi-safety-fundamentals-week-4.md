@@ -1,11 +1,11 @@
 ---
 layout: post
-title: AI Safety Fundamentals - Alignment Course - Week 4
+title: Scalable Oversight - AI Safety Fundamentals - Alignment Course - Week 4
 date: 2024-03-31
 categories: [AGI Safety Fundamentals, AI Alignment]
 ---
 
-# Week 4 Resource Notes
+# Scalable Oversight - Week 4 Resource Notes
 
 ## Can we scale human feedback for complex AI tasks?
 

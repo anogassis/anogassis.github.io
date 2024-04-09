@@ -1,11 +1,11 @@
 ---
 layout: post
-title: AI Safety Fundamentals - Alignment Course - Week 2
+title: AI Safety - AI Safety Fundamentals - Alignment Course - Week 2
 date: 2024-03-13
 categories: [AGI Safety Fundamentals]
 ---
 
-# Week 2 Lecture Notes
+# AI Safety - Week 2 Resource Notes
 
 ## What is AI alignment?
 
