@@ -7,27 +7,27 @@ categories: [AGI Safety Fundamentals, AI Alignment, Interpretability, Project]
 
 # Summary of Toy Models of Superposition
 
-## **Model Configuration and Instantiation**
+## Model Configuration and Instantiation
 
-- **Configuration**:
+- Configuration:
   - Features (`n_features`): 200
   - Hidden units (`n_hidden`): 20
   - Instances (`n_instances`): 20
 
-- **Model Parameters**:
+- Model Parameters:
   - **Feature Importance**: Presumed constant across features (not explicitly set in the provided snippets).
   - **Feature Probability**: Defined to decrease exponentially from 1 (fully dense) to 1/20 (highly sparse) across instances, potentially affecting the sparsity of input data and model training dynamics.
 
-## **Training and Optimization**
+## Training and Optimization
 
 - **Optimization**: The `optimize` function trains the model using an AdamW optimizer, likely adjusting weights to minimize a loss function.
 
-## **Weight Analysis Functions**
+## Weight Analysis Functions
 
 - **`compute_dimensionality`**:
   - Computes a dimensionality metric for the weights that quantifies how independently each feature can represent information, based on the interference (overlap) of normalized weight vectors.
 
-## **Visualization and Analysis**
+## Visualization and Analysis
 
 1. **Feature Sparsity vs. Weight Concentration**
    - **Plot**: Relationship between the inverse of feature probability (`1/(1-S)`) and the ratio of the number of hidden units to the squared Frobenius norm of the weight matrix (`m/||W||_F^2`).
