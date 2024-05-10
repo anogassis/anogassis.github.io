@@ -5,9 +5,11 @@ date: 2024-05-06
 categories: [AGI Safety Fundamentals, AI Alignment, Interpretability, Project]
 ---
 
-# Summary of Toy Models of Superposition
+# Summary of Toy Models of Superposition Notebook
 
-## Model Configuration and Instantiation
+This notebook can be found [here.](https://github.com/anthropics/toy-models-of-superposition/blob/main/toy_models.ipynb)
+
+## Model Configuration and Instantiation (of last model trained)
 
 - Configuration:
   - Features (`n_features`): 200
