@@ -22,7 +22,7 @@ This notebook can be found [here.](https://github.com/anthropics/toy-models-of-s
 
 ## Training and Optimization
 
-- **Optimization**: The `optimize` function trains the model using an AdamW optimizer, likely adjusting weights to minimize a loss function.
+- **Optimization**: The `optimize` function trains the model using an AdamW optimizer, adjusting weights to minimize a loss function.
 
 ## Weight Analysis Functions
 
